@@ -1,4 +1,4 @@
-const questions = [
+var questions = [
     {
         question: "What is commonly refered to as the skeleton of a web page ?",
         optionA: "Css",
@@ -53,7 +53,7 @@ function handleQuestions() {
     //function to shuffle and push 5 questions to shuffledQuestions array
 //app would be dealing with 5questions per session
     while (shuffledQuestions.length <= 4) {
-        const random = questions[Math.floor(Math.random() * questions.length)]
+        var random = questions[Math.floor(Math.random() * questions.length)]
         if (!shuffledQuestions.includes(random)) {
             shuffledQuestions.push(random)
         }
@@ -66,11 +66,11 @@ let userScore = 0  //display the user score
 let wrongAttempt = 0 //amount of wrong answers picked by user
 let indexNumber = 0 //will be used to display next question
 
-// function for displaying next question in the array to dom
-//also handles displaying user and quiz information to dom
+// function for displaying next question in the array to DOM
+//also handles displaying user and quiz information to DOM
 function NextQuestion(index) {
     handleQuestions()
-    const currentQuestion = shuffledQuestions[index]
+    var currentQuestion = shuffledQuestions[index]
     document.getElementById("question-number").innerHTML = questionNumber
     document.getElementById("user-score").innerHTML = userScore
     document.getElementById("display-question").innerHTML = currentQuestion.question;
@@ -83,9 +83,9 @@ function NextQuestion(index) {
 
 
 function checkForAnswer() {
-    const currentQuestion = shuffledQuestions[indexNumber] //gets current Question 
-    const currentQuestionAnswer = currentQuestion.correctOption //gets current Question's answer
-    const options = document.getElementsByName("option"); //gets all elements in dom with name of 'option' (in this the radio inputs)
+    var currentQuestion = shuffledQuestions[indexNumber] //gets current Question 
+    var currentQuestionAnswer = currentQuestion.correctOption //gets current Question's answer
+    var options = document.getElementsByName("option"); //gets all elements in DOM with name of 'option' (in this the radio inputs)
     let correctOption = null
 
     options.forEach((option) => {
@@ -130,16 +130,16 @@ function checkForAnswer() {
 
 //called when the next button is called
 function handleNextQuestion() {
-    checkForAnswer() //check if player picked right or wrong option
+    checkForAnswer() //check if user picked right or wrong option
     unCheckRadioButtons()
-    //delays next question displaying for a second just for some effects so questions don't rush in on player
+    //delays next question displaying for a second just for some effects so questions don't rush in on user
     setTimeout(() => {
-        if (indexNumber <= 9) {
-//displays next question as long as index number isn't greater than 9, remember index number starts from 0, so index 9 is question 10
+        if (indexNumber <= 4) {
+//displays next question as long as index number isn't greater than 4, remember index number starts from 0, so index 4 is question 5
             NextQuestion(indexNumber)
         }
         else {
-            handleEndGame()//ends game if index number greater than 9 meaning we're already at the 10th question
+            handleEndQuiz()//ends quiz if index number greater than 4 meaning we're already at the 5th question
         }
         resetOptionBackground()
     }, 1000);
@@ -147,7 +147,7 @@ function handleNextQuestion() {
 
 //sets options background back to null after display the right/wrong colors
 function resetOptionBackground() {
-    const options = document.getElementsByName("option");
+    var options = document.getElementsByName("option");
     options.forEach((option) => {
         document.getElementById(option.labels[0].id).style.backgroundColor = ""
     })
@@ -155,54 +155,54 @@ function resetOptionBackground() {
 
 // unchecking all radio buttons for next question(can be done with map or foreach loop also)
 function unCheckRadioButtons() {
-    const options = document.getElementsByName("option");
+    var options = document.getElementsByName("option");
     for (let i = 0; i < options.length; i++) {
         options[i].checked = false;
     }
 }
 
 // function for when all questions being answered
-function handleEndGame() {
+function handleEndQuiz() {
     let remark = null
     let remarkColor = null
 
-    // condition check for player remark and remark color
-    if (playerScore <= 3) {
+    // condition check for user remark and remark color
+    if (userScore <= 2) {
         remark = "Bad Grades, Keep Practicing."
         remarkColor = "red"
     }
-    else if (playerScore >= 4 && playerScore < 7) {
+    else if (userScore >= 3 && playerScore < 4) {
         remark = "Average Grades, You can do better."
         remarkColor = "orange"
     }
-    else if (playerScore >= 7) {
+    else if (userScore >= 4) {
         remark = "Excellent, Keep the good work going."
         remarkColor = "green"
     }
-    const playerGrade = (playerScore / 10) * 100
+    const playerGrade = (userScore / 5) * 100
 
     //data to display to score board
     document.getElementById('remarks').innerHTML = remark
     document.getElementById('remarks').style.color = remarkColor
-    document.getElementById('grade-percentage').innerHTML = playerGrade
+    document.getElementById('score-percentage').innerHTML = user-score
     document.getElementById('wrong-answers').innerHTML = wrongAttempt
-    document.getElementById('right-answers').innerHTML = playerScore
-    document.getElementById('score-modal').style.display = "flex"
+    document.getElementById('correct-answers').innerHTML = user-Score
+    document.getElementById('quiz-score').style.display = "flex"
 
 }
 
-//closes score modal, resets game and reshuffles questions
-function closeScoreModal() {
+//closes quiz score, resets quiz and reshuffles questions
+function closequizscore() {
     questionNumber = 1
-    playerScore = 0
+    userScore = 0
     wrongAttempt = 0
     indexNumber = 0
     shuffledQuestions = []
     NextQuestion(indexNumber)
-    document.getElementById('score-modal').style.display = "none"
+    document.getElementById('quiz-score').style.display = "none"
 }
 
 //function to close warning modal
-function closeOptionModal() {
-    document.getElementById('option-modal').style.display = "none"
+function closequizoption() {
+    document.getElementById('quiz-option').style.display = "none"
 }

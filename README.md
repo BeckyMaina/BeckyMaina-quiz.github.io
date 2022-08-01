@@ -11,7 +11,7 @@ When the user selects an answer to the question displayed then clicks the 'Next 
 
 Once the quiz is over then the user can save their initials and score.
 
-Each question carries (20marks). Thus, total score is out of 100%.
+Each question carries (1mark). Calculation of the total is (userscore * 100) to get total in %.
 
 
 

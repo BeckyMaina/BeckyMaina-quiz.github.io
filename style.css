@@ -26,17 +26,16 @@ h2{
     text-align: center;
 }
 
-.start-button-container{
+.start-btn{
     width: 50%;
     height: 3rem;
-    justify-content: center;
     align-items: center;
-    display: flex;
+    justify-content: center;  
 }
 
-.start-button-container button{
+.start-btn button{
     width: 8rem;
-    height: 2rem;
+    height: 3rem;
     border-radius: 10px;
     background-color: blue;
     color: rgb(25, 25, 25);
@@ -47,7 +46,7 @@ h2{
     justify-content: center;
 }
 
-.start-button-container button:hover{
+.start-btn button:hover{
     background-color: blanchedalmond;
 }
 
