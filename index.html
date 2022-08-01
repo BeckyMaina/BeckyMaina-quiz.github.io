@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codding Assessment</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+ <body onload="NextQuestion(0)">
+
+        <h1>Coding Quiz</h1>
+
+
+        <br>
+
+
+        <h2>Welcome to the Coding Quiz. To start, please click on the 'START' button below.
+        </h2>
+
+        <br>
+
+        <div class="start-button-container">
+            <button onclick="beginQuiz()">START</button>
+        </div>
+              
+
+        <main>
+
+                <div class="test-container" id="quiz-score">
+    
+                    <div class="test-content-container">
+
+                              <h1>Congratulations, Quiz Completed.</h1>
+
+                              <div class="Score-details">
+                                    <p>Questions answered : 5</p>
+                                    <p>Wrong Answers : <span id="wrong-answers"></span></p>
+                                    <p>Correct Answers : <span id="correct-answers"></span></p>
+                                    <p>Score : <span id="score-percentage"></span>%</p>
+                                    <p><span id="remarks"></span></p>
+                              </div>
+
+                             <div class="test-button-container">
+                                   <button onclick="closeQizScore()"></button>
+                             </div>
+
+                   </div>
+              </div>
+
+             <div class="quiz-container">
+
+                      <div class="quiz-details-container">
+                             <h1>Score : <span id="user-score"></span> /5</h1>
+                             <h2>Question : <span id="question-number"></span> /5</h2>
+                             <h3>Time Remaining : <span id="time-left"></span> 30:00</h3>
+                      </div>
+
+                      <div class="quiz-question-container">
+                           <h1 id="display-question"></h1>
+                      </div>
+
+                      <div class="quiz-option-container">
+
+                             <div class="test-container" id="quiz-option">
+
+                                  <div class="test-content-container">
+                                        <h1>Please Pick An Option</h1>
+
+                                       <div class="test-button-container">
+                                             <button onclick="closeQuizOption()">Continue</button>
+                                       </div>
+                                  </div>
+                             </div>
+
+                             <span>
+                                   <input type="radio" id="option-one" name="option" class="radio" value="optionA" />
+                                   <label for="option-one" class="option" id="option-one" class="option" id="option-one-label"></label>
+                             </span>
+
+                             <span>
+                                   <input type="radio" id="option-two" name="option" class="radio" value="optionB" />
+                                   <label for="option-two" class="option" id="option-two" class="option" id="option-two-label"></label>
+                             </span>
+
+                             <span>
+                                   <input type="radio" id="option-three" name="option" class="radio" value="optionC" />
+                                   <label for="option-three" class="option" id="option-three" class="option" id="option-three-label"></label>
+                             </span>
+
+                             <span>
+                                   <input type="radio" id="option-four" name="option" class="radio" value="optionD" />
+                                   <label for="option-four" class="option" id="option-four" class="option" id="option-four-label"></label>
+                             </span>
+
+                        </div>
+
+                        <div class="next-button-container">
+                             <button onclick="handleNextQuestion()">Next Question</button>
+                        </div>
+
+
+                </div>
+        </main>
+        <script src="script.js"></script>  
+  </body>
+</html>
