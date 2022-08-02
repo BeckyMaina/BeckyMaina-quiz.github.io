@@ -10,97 +10,111 @@
 
  <body>
 
-        <h1>Coding Quiz</h1>
+          <!--Start Quiz button-->
+          <button class="start-btn">START</button>
+      
+          <!--Quiz Container-->
+           <div class="quiz-container">
+               <header>
 
+                     <div class="title">Coding Quiz</div>
+                     <div class="timer">
+                         <div class="timer-text">Time Remaining</div>
+                         <div class="timer-sec">15 sec</div>
+                     </div>
+                 </header>
 
-        <br>
+                 <br>
 
+                 <section>
 
-        <h2>Welcome to the Coding Quiz. To start, please click on the 'START' button below.
-        </h2>
-
-        <br>
-        <!--Start Quiz button-->
-        <div class="start-btn"><button>START</button></div>
-              
-
-        <main>
-
-                <div class="test-container" id="quiz-score">
-    
-                    <div class="test-content-container">
-
-                              <h1>Congratulations, Quiz Completed.</h1>
-
-                              <div class="Score-details">
-                                    <p>Questions answered : 5</p>
-                                    <p>Wrong Answers : <span id="wrong-answers"></span></p>
-                                    <p>Correct Answers : <span id="correct-answers"></span></p>
-                                    <p>Score : <span id="score-percentage"></span>%</p>
-                                    <p><span id="remarks"></span></p>
-                              </div>
-
-                             <div class="test-button-container">
-                                   <button onclick="closeQizScore()"></button>
-                             </div>
-
-                   </div>
-              </div>
-
-             <div class="quiz-container">
-
-                      <div class="quiz-details-container">
-                             <h1>Score : <span id="user-score"></span> /5</h1>
-                             <h2>Question : <span id="question-number"></span> /5</h2>
-                             <h3>Time Remaining : <span id="time-left"></span> 30:00</h3>
+                      <div class="quiz-question">
+                            <h1 id="display-question"></h1>
                       </div>
-
-                      <div class="quiz-question-container">
-                           <h1 id="display-question"></h1>
-                      </div>
-
-                      <div class="quiz-option-container">
+  
+                      <div class="quiz-option">
 
                              <div class="test-container" id="quiz-option">
 
                                   <div class="test-content-container">
                                         <h1>Please Pick An Option</h1>
 
-                                       <div class="test-button-container">
-                                             <button onclick="closeQuizOption()">Continue</button>
+                                       <div class="test-btn-container">
+                                             <button class="test-btn">Continue</button>
                                        </div>
                                   </div>
                              </div>
+                             
+                             <div class="option">
+                                  <span>
+                                      <input type="radio" id="option-one" name="option" class="radio" value="optionA" />
+                                      <label for="option-one" class="option" id="option-one" class="option" id="option-one-label"></label>
+                                 </span>
+                             </div>
+                             
+                             <div class="option">
+                                  <span>
+                                       <input type="radio" id="option-two" name="option" class="radio" value="optionB" />
+                                       <label for="option-two" class="option" id="option-two" class="option" id="option-two-label"></label>
+                                 </span>
+                             </div>
+                             
+                             <div class="option">
+                                   <span>
+                                       <input type="radio" id="option-three" name="option" class="radio" value="optionC" />
+                                       <label for="option-three" class="option" id="option-three" class="option" id="option-three-label"></label>
+                                  </span>
+                             </div>
+                             
+                             <div class="option">
+                                  <span>
+                                       <input type="radio" id="option-four" name="option" class="radio" value="optionD" />
+                                       <label for="option-four" class="option" id="option-four" class="option" id="option-four-label"></label>
+                                  </span>
+                             </div>
+                       </div>
+                 </section>
 
-                             <span>
-                                   <input type="radio" id="option-one" name="option" class="radio" value="optionA" />
-                                   <label for="option-one" class="option" id="option-one" class="option" id="option-one-label"></label>
-                             </span>
+                 <!--quiz-container footer-->
+                <footer>
+                     <div class="question-number">
+                           <span id="que-number">Question :   /5</span>
+                     </div>
 
-                             <span>
-                                   <input type="radio" id="option-two" name="option" class="radio" value="optionB" />
-                                   <label for="option-two" class="option" id="option-two" class="option" id="option-two-label"></label>
-                             </span>
+                      <br>
 
-                             <span>
-                                   <input type="radio" id="option-three" name="option" class="radio" value="optionC" />
-                                   <label for="option-three" class="option" id="option-three" class="option" id="option-three-label"></label>
-                             </span>
+                      <div class="next-btn">
+                           <button class="next-btn">Next Question</button>
+                      </div>        
+                </footer>
 
-                             <span>
-                                   <input type="radio" id="option-four" name="option" class="radio" value="optionD" />
-                                   <label for="option-four" class="option" id="option-four" class="option" id="option-four-label"></label>
-                             </span>
+               <!--Result container-->
+               <div class="result-container" id="quiz-score">
+    
+                     <div class="result-content-container">
 
-                        </div>
+                            <h1>Congratulations, Quiz Completed.</h1>
 
-                        <div class="next-button-container">
-                             <button onclick="handleNextQuestion()">Next Question</button>
-                        </div>
+                            <div class="Score-details">
+                                  <p>Questions answered : 5</p>
+                                  <p>Wrong Answers : <span id="wrong-answers"></span></p>
+                                  <p>Correct Answers : <span id="correct-answers"></span></p>
+                                  <p>Score : <span id="score-percentage"></span>%</p>
+                                  <p><span id="remarks"></span></p>
+                            </div>
 
+                            <h2>Please enter your initials below to save your score.</h2>
 
+                            <div class="initials-box">
+                                  <p>Initials: <span id="input-initials"></span></p>
+                            </div>
+
+                            <div class="save-quiz-btn">
+                                 <button class="save-btn">Save</button>
+                            </div>
+                      </div>
                 </div>
-        </main>
-        <script src="script.js"></script>  
+           </div>
+           <script src="script.js"></script>  
   </body>
 </html>

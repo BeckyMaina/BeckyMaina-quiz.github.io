@@ -47,6 +47,68 @@ var questions = [
 ]
 
 
+document.querySelector(".start-btn").addEventListener("click", startquiz)
+function startquiz() {
+
+   document.querySelector(".quiz-container").style.display= "flex";
+
+   var displayquestion= questions[0].question 
+   document.querySelector("#display-question").textContent= displayquestion
+   var displayquestion= questions[0].optionA
+   document.querySelector("#option-one").textcontent= displayquestion
+   var displayquestion= questions[0].optionB
+   document.querySelector("#option-two").textcontent= displayquestion
+   var displayquestion= questions[0].optionC
+   document.querySelector("#option-three").textcontent= displayquestion
+   var displayquestion= questions[0].optionD
+   document.querySelector("#option-four").textcontent= displayquestion
+
+   var displayquestion= questions[1].question
+   document.quesryselector("#display-question").textcontent= displayquestion
+   var displayquestion= questions[1].optionA
+   document.querySelector("#option-one").textcontent= displayquestion
+   var displayquestion= questions[1].optionB
+   document.querySelector("#option-two").textcontent= displayquestion
+   var displayquestion= questions[1].optionC
+   document.querySelector("#option-three").textcontent= displayquestion
+   var displayquestion= questions[1].optionD
+   document.querySelector("#option-four").textcontent= displayquestion
+
+   var displayquestion= questions[2].question
+   document.querySelector("#display-question").textcontent= displayquestion
+   var displayquestion= questions[2].optionA
+   document.querySelector("#option-one").textcontent= displayquestion
+   var displayquestion= questions[2].optionB
+   document.querySelector("#option-two").textcontent= displayquestion
+   var displayquestion= questions[2].optionC
+   document.querySelector("#option-three").textcontent= displayquestion
+   var displayquestion= questions[2].optionD
+   document.querySelector("#option-four").textcontent= displayquestion
+
+   var displayquestion= questions[3].question
+   document.querySelector("#display-question").textcontent= displayquestion
+   var displayquestion= questions[3].optionA
+   document.querySelector("#option-one").textcontent= displayquestion
+   var displayquestion= questions[3].optionB
+   document.querySelector("#option-two").textcontent= displayquestion
+   var displayquestion= questions[3].optionC
+   document.querySelector("#option-three").textcontent= displayquestion
+   var displayquestion= questions[3].optionD
+   document.querySelector("#option-four").textcontent= displayquestion
+
+   var displayquestion= questions[4].question
+   document.querySelector("#display-question").textcontent= displayquestion
+   var displayquestion= questions[4].optionA
+   document.querySelector("#option-one").textcontent= displayquestion
+   var displayquestion= questions[4].optionB
+   document.querySelector("#option-two").textcontent= displayquestion
+   var displayquestion= questions[4].optionC
+   document.querySelector("#option-three").textcontent= displayquestion
+   var displayquestion= questions[4].optionD
+   document.querySelector("#option-four").textcontent= displayquestion
+}
+
+
 let shuffledQuestions = [] //empty array to hold shuffled selected questions out of all available questions
 
 function handleQuestions() { 
