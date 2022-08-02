@@ -24,10 +24,10 @@ Each question carries (1mark). Calculation of the total is (userscore * 100) to 
 
 ## URL to deployed application
 
-
+https://BeckyMaina-quiz.github.io
 
 ## URL to Github Repository
 
-
+https://github.com/BeckyMaina/BeckyMaina-quiz.github.io
 
 
